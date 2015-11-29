@@ -8,6 +8,8 @@ import play.api.mvc.{Controller, Action}
 import rds.StagingHelper
 import play.api.i18n.{I18nSupport, MessagesApi}
 
+import scala.util.{Success, Failure}
+
 
 class Application @Inject()(implicit val messagesApi: MessagesApi) extends Controller with I18nSupport {
 
@@ -16,8 +18,13 @@ class Application @Inject()(implicit val messagesApi: MessagesApi) extends Contr
   }
 
   def refreshStaging = Action { implicit request =>
-    val result:(String, String) = StagingHelper.refreshStaging
-    Redirect(routes.Application.index()).flashing(result)
+
+    val flashMessage: (String, String) = StagingHelper.refreshStaging match {
+      case Failure(exception) => "error" -> exception.getMessage
+      case Success(result) => result
+    }
+
+    Redirect(routes.Application.index()).flashing(flashMessage)
 
   }
 
