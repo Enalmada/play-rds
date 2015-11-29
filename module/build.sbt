@@ -16,7 +16,7 @@ sonatypeSettings
 
 publishMavenStyle := true
 
-organization := "com.enalmada"
+organization := "com.github.enalmada"
 
 description := "This is a collection of helpers to restore AWS RDS database."
 
@@ -40,8 +40,9 @@ pomIncludeRepository := { _ => false }
 
 pomExtra := (
   <scm>
-    <url>git@github.com:enalmada/play-rds.git</url>
     <connection>scm:git:git@github.com:enalmada/play-rds.git</connection>
+    <developerConnection>scm:git:git@github.com:enalmada/play-rds.git</developerConnection>
+    <url>git@github.com:enalmada/play-rds.git</url>
   </scm>
   <developers>
     <developer>
