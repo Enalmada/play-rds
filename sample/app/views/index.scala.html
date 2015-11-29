@@ -1,0 +1,40 @@
+@()(implicit request: Request[Any], flash: Flash, messages: Messages)
+
+
+@main("AWS") {
+
+    <h1 id="homeTitle">AWS</h1>
+
+    @flash.get("success").map { message =>
+        <div class="alert alert-success" role="alert">
+            @Html(message)
+        </div>
+    }
+    @flash.get("error").map { message =>
+        <div class="alert alert-danger" role="alert">
+            @Html(message)
+        </div>
+    }
+
+    <h2 id="homeTitle">AWS Actions</h2>
+
+    <table class="table goals table-striped table-fixed-header">
+        <thead class="header">
+            <tr>
+                <th style="width: 20px;">X</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href='@routes.Application.refreshStaging()'>Update Staging</a></td>
+                <td>Refresh Staging DB</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+
+}
+
