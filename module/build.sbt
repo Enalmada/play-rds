@@ -1,6 +1,6 @@
 name := """play-rds"""
 
-version := "0.1.0-SNAPSHOT"
+version := "0.1.0"
 
 scalaVersion := "2.11.7"
 
@@ -17,17 +17,11 @@ libraryDependencies ++= Seq(
 // Maven settings
 //*******************************
 
-sonatypeSettings
-
 publishMavenStyle := true
 
-organization := "com.enalmada"
+organization := "com.github.enalmada"
 
 description := "This is a collection of helpers to restore AWS RDS database."
-
-homepage := Some(url("https://github.com/Enalmada/play-rds"))
-
-licenses := Seq("Apache License" -> url("https://github.com/Enalmada/play-rds/blob/master/LICENSE"))
 
 startYear := Some(2015)
 
@@ -43,12 +37,19 @@ publishArtifact in Test := false
 
 pomIncludeRepository := { _ => false }
 
-pomExtra := (
-  <scm>
-    <connection>scm:git:git@github.com:enalmada/play-rds.git</connection>
-    <developerConnection>scm:git:git@github.com:enalmada/play-rds.git</developerConnection>
-    <url>git@github.com:enalmada/play-rds.git</url>
-  </scm>
+pomExtra in Global := {
+  <url>https://github.com/Enalmada/play-rds</url>
+    <licenses>
+      <license>
+        <name>Apache 2</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      </license>
+    </licenses>
+    <scm>
+      <connection>scm:git:git@github.com:enalmada/play-rds.git</connection>
+      <developerConnection>scm:git:git@github.com:enalmada/play-rds.git</developerConnection>
+      <url>https://github.com/enalmada</url>
+    </scm>
     <developers>
       <developer>
         <id>enalmada</id>
@@ -56,6 +57,6 @@ pomExtra := (
         <url>https://github.com/enalmada</url>
       </developer>
     </developers>
-  )
+}
 
 credentials += Credentials(Path.userHome / ".sbt" / "sonatype.credentials")
