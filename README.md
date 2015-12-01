@@ -1,5 +1,7 @@
 # play-rds [![Build Status](https://travis-ci.org/Enalmada/play-rds.svg?branch=master)](https://travis-ci.org/Enalmada/play-rds)
 
+[![Join the chat at https://gitter.im/Enalmada/play-rds](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Enalmada/play-rds?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is a collection of rds helpers.  Right now it just restores a db and that is all it does.
 Hopefully it saves you a few hours of having to figure it the quirks of AWS on your own.
 The code isn't pretty or idomatic scala yet, but it works. 
