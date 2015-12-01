@@ -7,3 +7,9 @@ jdk:
 
 scala:
   - 2.11.7
+  
+cache:
+  directories:
+    - $HOME/.ivy2/cache  
+  
+  
