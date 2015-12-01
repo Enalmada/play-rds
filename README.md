@@ -1,4 +1,7 @@
-Play-RDS
+# play-rds
+===================
+
+# [![Build Status](https://travis-ci.org/enalmada/play-rds.svg?branch=master)](https://travis-ci.org/enalmada/play-rds)
 
 This is a collection of rds helpers.  Right now it just restores a db and that is all it does.
 Hopefully it saves you a few hours of having to figure it the quirks of AWS on your own.
