@@ -73,15 +73,16 @@ object StagingHelper {
 
       val request: DescribeDBSnapshotsRequest = new DescribeDBSnapshotsRequest()
       request.setDBInstanceIdentifier(stagingMaster)
-      // This is the min...stupid.
-      request.setMaxRecords(20)
+      // Not sortable on api?  We need latest....doesn't seem to give us latest.
+      request.setMaxRecords(100)
       val result: DescribeDBSnapshotsResult = rdsClient.describeDBSnapshots(request)
       val list: java.util.List[DBSnapshot] = result.getDBSnapshots
       Logger.debug(s"list length = ${list.size}")
       if (list.isEmpty) {
         Success("error" -> "No snapshots found.")
       } else {
-        val snapshot = list.get(0)
+        // Sort by latest
+        val snapshot = list.asScala.sortBy(-_.getSnapshotCreateTime.getTime).head
         Logger.debug(s"Snapshot name: ${snapshot.getDBSnapshotIdentifier}")
 
         // Rename staging if exists
