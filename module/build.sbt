@@ -48,7 +48,7 @@ pomExtra in Global := {
     <scm>
       <connection>scm:git:git@github.com:enalmada/play-rds.git</connection>
       <developerConnection>scm:git:git@github.com:enalmada/play-rds.git</developerConnection>
-      <url>https://github.com/enalmada</url>
+      <url>https://github.com/Enalmada/play-rds</url>
     </scm>
     <developers>
       <developer>
